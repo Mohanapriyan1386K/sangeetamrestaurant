@@ -3,6 +3,7 @@ import axios from "axios";
 import { FaStar } from "react-icons/fa";
 import * as Yup from "yup";
 import { useFormik } from "formik";
+import { BASE_URL } from "../../Const";
 
 const ratingFields = [
   "food",
@@ -62,7 +63,7 @@ export default function Feedback() {
     onSubmit: async (values, { resetForm }) => {
       try {
         setLoading(true);
-        await axios.post("http://localhost:5000/api/feedback", values);
+        await axios.post(` ${BASE_URL}/api/feedback`, values);
         setShowModal(true);
         resetForm();
       } catch (err) {

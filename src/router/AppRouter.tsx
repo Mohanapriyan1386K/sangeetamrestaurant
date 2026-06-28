@@ -1,19 +1,28 @@
+import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
+
 import MainLayout from "../Layout/MainLayout";
 import AdminLayout from "../Layout/AdminLayout";
 import ProtectedRoute from "./ProtectedRoute";
+import Loader from "../Compent/Loader";
 
-import Home from "../Screen/ClientScreen/Home";
-import About from "../Screen/ClientScreen/About";
-import Menu from "../Screen/ClientScreen/Menu";
-import Gallery from "../Screen/ClientScreen/Gallery";
-import Contact from "../Screen/ClientScreen/Contact";
-import Feedback from "../Screen/ClientScreen/feedback";
+// Lazy Loading
+const Home = lazy(() => import("../Screen/ClientScreen/Home"));
+const About = lazy(() => import("../Screen/ClientScreen/About"));
+const Menu = lazy(() => import("../Screen/ClientScreen/Menu"));
+const Gallery = lazy(() => import("../Screen/ClientScreen/Gallery"));
+const Contact = lazy(() => import("../Screen/ClientScreen/Contact"));
+const Feedback = lazy(() => import("../Screen/ClientScreen/feedback"));
 
-import Login from "../Screen/Admin/Login";
-import Dashboard from "../Screen/Admin/Dashboard";
-import FeedbackList from "../Screen/Admin/FeedbackList";
-import NotFound from "../Screen/NotFound";
+const Login = lazy(() => import("../Screen/Admin/Login"));
+const Dashboard = lazy(() => import("../Screen/Admin/Dashboard"));
+const FeedbackList = lazy(() => import("../Screen/Admin/FeedbackList"));
+const NotFound = lazy(() => import("../Screen/NotFound"));
+
+
+const withSuspense = (Component: React.ReactNode) => (
+  <Suspense fallback={<Loader />}>{Component}</Suspense>
+);
 
 const AppRouter = createBrowserRouter([
   {
@@ -22,34 +31,34 @@ const AppRouter = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />,
+        element: withSuspense(<Home />),
       },
       {
         path: "about",
-        element: <About />,
+        element: withSuspense(<About />),
       },
       {
         path: "menu",
-        element: <Menu />,
+        element: withSuspense(<Menu />),
       },
       {
         path: "gallery",
-        element: <Gallery />,
+        element: withSuspense(<Gallery />),
       },
       {
         path: "contact",
-        element: <Contact />,
+        element: withSuspense(<Contact />),
       },
       {
         path: "feedback",
-        element: <Feedback />,
+        element: withSuspense(<Feedback />),
       },
     ],
   },
 
   {
     path: "/login",
-    element: <Login />,
+    element: withSuspense(<Login />),
   },
 
   {
@@ -62,19 +71,19 @@ const AppRouter = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Dashboard />,
+        element: withSuspense(<Dashboard />),
       },
       {
         path: "feedbackList",
-        element: <FeedbackList />,
+        element: withSuspense(<FeedbackList />),
       },
     ],
   },
 
   {
-  path: "*",
-  element: <NotFound />,
-}
+    path: "*",
+    element: withSuspense(<NotFound />),
+  },
 ]);
 
 export default AppRouter;

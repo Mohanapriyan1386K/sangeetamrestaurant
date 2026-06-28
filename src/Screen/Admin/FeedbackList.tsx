@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { FaStar, FaPhone, FaEnvelope, FaUtensils } from "react-icons/fa";
+import { BASE_URL } from "../../Const";
+import Loader from "../../Compent/Loader";
+import OnlyLoader from "../../Compent/OnlyLoader";
 
 export default function FeedbackList() {
   const [feedbacks, setFeedbacks] = useState([]);
@@ -12,7 +15,7 @@ export default function FeedbackList() {
 
   const getFeedbacks = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/feedback");
+      const res = await axios.get(`${BASE_URL}/api/feedback`);
       setFeedbacks(res.data.data);
     } catch (err) {
       console.log(err);
@@ -33,7 +36,7 @@ export default function FeedbackList() {
   );
 
   if (loading) {
-    return <div className="flex justify-center mt-10">Loading...</div>;
+    return <div className="flex justify-center mt-10"><OnlyLoader/></div>;
   }
 
   return (
