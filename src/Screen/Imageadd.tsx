@@ -5,7 +5,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const BASE_URL = "https://snageethamresturent.vercel.app";
+// const BASE_URL = "https://snageethamresturent.vercel.app";
 
 function Imageadd() {
   const [name, setName] = useState("");

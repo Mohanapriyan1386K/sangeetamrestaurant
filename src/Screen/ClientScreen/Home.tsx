@@ -1,4 +1,4 @@
-import { BsStar, BsStars, BsStarFill, BsChevronRight } from "react-icons/bs";
+import { BsStars, BsStarFill, BsChevronRight } from "react-icons/bs";
 
 
 function Home() {

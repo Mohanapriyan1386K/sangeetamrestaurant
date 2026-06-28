@@ -12,7 +12,7 @@ const About = lazy(() => import("../Screen/ClientScreen/About"));
 const Menu = lazy(() => import("../Screen/ClientScreen/Menu"));
 const Gallery = lazy(() => import("../Screen/ClientScreen/Gallery"));
 const Contact = lazy(() => import("../Screen/ClientScreen/Contact"));
-const Feedback = lazy(() => import("../Screen/ClientScreen/feedback"));
+const Feedback = lazy(() => import("../Screen/ClientScreen/Feedback"));
 
 const Login = lazy(() => import("../Screen/Admin/Login"));
 const Dashboard = lazy(() => import("../Screen/Admin/Dashboard"));

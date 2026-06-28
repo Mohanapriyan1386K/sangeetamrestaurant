@@ -4,9 +4,6 @@ import {
   FiX,
   FiHome,
   FiMessageSquare,
-  FiUsers,
-  FiBarChart2,
-  FiSettings,
 } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
 

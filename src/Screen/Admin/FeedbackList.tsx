@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { FaStar, FaPhone, FaEnvelope, FaUtensils } from "react-icons/fa";
 import { BASE_URL } from "../../Const";
-import Loader from "../../Compent/Loader";
 import OnlyLoader from "../../Compent/OnlyLoader";
 
 export default function FeedbackList() {
