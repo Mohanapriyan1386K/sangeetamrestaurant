@@ -15,8 +15,8 @@ const ratingFields = [
 
 const validationSchema = Yup.object({
   customerName: Yup.string().required("Customer name is required"),
-  mobileNumber: Yup.string()
-    .matches(/^[0-9]{10}$/, "Enter a valid mobile number"),
+  // mobileNumber: Yup.string()
+  //   .matches(/^[0-9]{10}$/, "Enter a valid mobile number"),
   // email: Yup.string().email("Invalid email").required("Email is required"),
   // tableNumber: Yup.number()
   //   .required("Table number is required")
@@ -40,7 +40,7 @@ export default function Feedback() {
   const formik = useFormik({
     initialValues: {
       customerName: "",
-      mobileNumber: "",
+      // mobileNumber: "",
       // email: "",
       // tableNumber: "",
       ratings: {
@@ -111,7 +111,7 @@ export default function Feedback() {
               )}
             </div>
 
-            <div>
+            {/* <div>
               <input
                 name="mobileNumber"
                 placeholder="Mobile Number"
@@ -130,7 +130,7 @@ export default function Feedback() {
               {formik.touched.mobileNumber && formik.errors.mobileNumber && (
                 <p className="text-red-500 text-sm mt-1">{formik.errors.mobileNumber}</p>
               )}
-            </div>
+            </div> */}
 
             {/* <div>
               <input
