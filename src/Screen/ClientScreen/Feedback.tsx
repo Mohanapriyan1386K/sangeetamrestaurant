@@ -16,8 +16,7 @@ const ratingFields = [
 const validationSchema = Yup.object({
   customerName: Yup.string().required("Customer name is required"),
   mobileNumber: Yup.string()
-    .matches(/^[0-9]{10}$/, "Enter a valid mobile number")
-    .required("Mobile number is required"),
+    .matches(/^[0-9]{10}$/, "Enter a valid mobile number"),
   // email: Yup.string().email("Invalid email").required("Email is required"),
   // tableNumber: Yup.number()
   //   .required("Table number is required")
