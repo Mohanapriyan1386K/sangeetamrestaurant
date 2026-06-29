@@ -10,7 +10,7 @@ const ratingFields = [
   "service",
   "ambience",
   "cleanliness",
-  "valueForMoney",
+  // "valueForMoney",
 ];
 
 const validationSchema = Yup.object({
@@ -18,10 +18,10 @@ const validationSchema = Yup.object({
   mobileNumber: Yup.string()
     .matches(/^[0-9]{10}$/, "Enter a valid mobile number")
     .required("Mobile number is required"),
-  email: Yup.string().email("Invalid email").required("Email is required"),
-  tableNumber: Yup.number()
-    .required("Table number is required")
-    .positive(),
+  // email: Yup.string().email("Invalid email").required("Email is required"),
+  // tableNumber: Yup.number()
+  //   .required("Table number is required")
+  //   .positive(),
   likedMost: Yup.string().required("Please enter your feedback"),
   suggestions: Yup.string(),
 });
@@ -42,8 +42,8 @@ export default function Feedback() {
     initialValues: {
       customerName: "",
       mobileNumber: "",
-      email: "",
-      tableNumber: "",
+      // email: "",
+      // tableNumber: "",
       ratings: {
         food: 0,
         service: 0,
@@ -133,7 +133,7 @@ export default function Feedback() {
               )}
             </div>
 
-            <div>
+            {/* <div>
               <input
                 name="email"
                 placeholder="Email"
@@ -145,9 +145,9 @@ export default function Feedback() {
               {formik.touched.email && formik.errors.email && (
                 <p className="text-red-500 text-sm mt-1">{formik.errors.email}</p>
               )}
-            </div>
+            </div> */}
 
-            <div>
+            {/* <div>
               <input
                 name="tableNumber"
                 placeholder="Table Number"
@@ -160,7 +160,7 @@ export default function Feedback() {
               {formik.touched.tableNumber && formik.errors.tableNumber && (
                 <p className="text-red-500 text-sm mt-1">{formik.errors.tableNumber}</p>
               )}
-            </div>
+            </div> */}
 
           </div>
 
