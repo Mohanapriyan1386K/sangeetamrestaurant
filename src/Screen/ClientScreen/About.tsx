@@ -62,7 +62,9 @@ export default function About() {
 
           <div>
             <img
-              src={"https://res.cloudinary.com/dmmxb21nu/image/upload/v1782800430/sn_dsqsnh.png"}
+              src={
+                "https://res.cloudinary.com/dmmxb21nu/image/upload/v1782752029/menu/koieoehwpzwvurm9fskj.webp"
+              }
               alt="Restaurant"
               className="rounded-3xl shadow-2xl object-cover w-full h-[600px]"
             />
