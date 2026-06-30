@@ -3,6 +3,7 @@ import axios from "axios";
 import Modal from "../../Compent/Modal";
 import Menu from "./component/Menu";
 import PageHeader from "../../Compent/PageHeader";
+import { BASE_URL } from "../../Const";
 
 const MenuList = () => {
   const [menus, setMenus] = useState([]);
@@ -16,7 +17,9 @@ const MenuList = () => {
 
   const getMenus = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/menu");
+      
+      const res = await axios.get(`${BASE_URL} /api/menu`);
+      // const res = await axios.get("http://localhost:5000/api/menu");
       setMenus(res.data.data);
     } catch (err) {
       console.log(err);
@@ -29,7 +32,10 @@ const MenuList = () => {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/menu/${id}`);
+      // await axios.delete(`http://localhost:5000/api/menu/${id}`);
+
+            await axios.delete(`${BASE_URL}/api/menu/${id}`);
+
 
       alert("Deleted Successfully");
 

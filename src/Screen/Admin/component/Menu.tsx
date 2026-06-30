@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { BASE_URL } from "../../../Const";
 
 const Menu = ({ data, mode }: any) => {
   console.log(data);
@@ -57,7 +58,8 @@ const Menu = ({ data, mode }: any) => {
         const res =
           mode === "update"
             ? await axios.put(
-                `http://localhost:5000/api/menu/${data._id}`,
+                // `http://localhost:5000/api/menu/${data._id}`
+                `${BASE_URL}/api/menu/${data._id}`,
                 formData,
                 {
                   headers: {
@@ -65,7 +67,7 @@ const Menu = ({ data, mode }: any) => {
                   },
                 },
               )
-            : await axios.post("http://localhost:5000/api/menu", formData, {
+            : await axios.post(`${BASE_URL}/api/menu`, formData, {
                 headers: {
                   "Content-Type": "multipart/form-data",
                 },
