@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Modal from "../../Compent/Modal";
-import Menu from "./component/Menu";
+import Menu from "./Modalcomponent/Menu";
 import PageHeader from "../../Compent/PageHeader";
 import { BASE_URL } from "../../Const";
 import OnlyLoader from "../../Compent/OnlyLoader";
+import { toast } from "react-toastify";
 
 const MenuList = () => {
   const [menus, setMenus] = useState<any[]>([]);
@@ -70,11 +71,11 @@ const MenuList = () => {
 
     try {
       await axios.delete(`${BASE_URL}/api/menu/${id}`);
-      alert("Deleted Successfully");
+      toast.success("Deleted Successfully");
       getMenus();
     } catch (err) {
       console.log(err);
-      alert("Delete Failed");
+      toast.error("Delete Failed");
     }
   };
 

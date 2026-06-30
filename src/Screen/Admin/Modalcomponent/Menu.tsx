@@ -3,11 +3,9 @@ import axios from "axios";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { BASE_URL } from "../../../Const";
+import { toast } from "react-toastify";
 
 const Menu = ({ data, mode }: any) => {
-  console.log(data);
-  console.log(mode);
-
   const [preview, setPreview] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -73,9 +71,7 @@ const Menu = ({ data, mode }: any) => {
                 },
               });
 
-        alert(res.data.message);
-
-        alert(res.data.message);
+        toast.success(res.data.message);
 
         resetForm();
         setPreview(null);
@@ -162,6 +158,7 @@ const Menu = ({ data, mode }: any) => {
             name="category"
             value={formik.values.category}
             onChange={formik.handleChange}
+            multiple
             onBlur={formik.handleBlur}
             className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500"
           >

@@ -3,18 +3,18 @@ import axios from "axios";
 import { BASE_URL } from "../../Const";
 
 const categories = [
-  { label: "Starters", value: "starters" },
-  { label: "Soups", value: "soups" },
-  { label: "Breakfast", value: "breakfast" },
   { label: "South Indian", value: "south_indian" },
-  { label: "North Indian", value: "north_indian" },
+  { label: "Breakfast", value: "breakfast" },
+  { label: "Starters", value: "starters" },
+  // { label: "Soups", value: "soups" },
+  // { label: "North Indian", value: "north_indian" },
   { label: "Rice", value: "rice" },
-  { label: "Biryani", value: "biryani" },
   { label: "Noodles", value: "noodles" },
-  { label: "Pasta", value: "pasta" },
-  { label: "Snacks", value: "snacks" },
+  { label: "Biryani", value: "biryani" },
+  // { label: "Pasta", value: "pasta" },
+  // { label: "Snacks", value: "snacks" },
   { label: "Beverages", value: "beverages" },
-  { label: "Desserts", value: "desserts" },
+  // { label: "Desserts", value: "desserts" },
   { label: "Meals", value: "meals" },
 ];
 
@@ -54,18 +54,18 @@ function Menu() {
   }, [page, category]);
 
   return (
-    <section className="max-w-7xl mx-auto px-5 py-12">
+    <section className="max-w-7xl mx-auto px-2 py-5 mt-10 md:mt-22">
       {/* Heading */}
-      <div className="text-center mb-10">
+      <div className="text-center mb-2">
         <h1 className="text-4xl font-bold">Our Menu</h1>
-        <p className="text-gray-500 mt-2">
+        {/* <p className="text-gray-500 mt-2">
           Freshly prepared dishes with authentic taste.
-        </p>
+        </p> */}
       </div>
 
       {/* Category Tabs */}
-      <div className="overflow-x-auto mb-10">
-        <div className="flex gap-3 min-w-max pb-2">
+      <div className="sticky top-15 md:top-17 z-50 bg-white shadow-sm overflow-x-auto scrollbar-hide rounded-4xl">
+        <div className="flex gap-3 min-w-max px-2 py-2">
           {categories.map((item) => (
             <button
               key={item.value}
@@ -73,7 +73,7 @@ function Menu() {
                 setCategory(item.value);
                 setPage(1);
               }}
-              className={`px-6 py-3 rounded-full font-medium whitespace-nowrap transition duration-300 ${
+              className={`px-6 py-3 rounded-full font-medium whitespace-nowrap transition-all duration-300 ${
                 category === item.value
                   ? "bg-orange-500 text-white shadow-lg"
                   : "bg-gray-100 hover:bg-orange-100"
@@ -101,7 +101,7 @@ function Menu() {
 
       {/* Cards */}
       {!loading && menus.length > 0 && (
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
+        <div className=" grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
           {menus.map((menu: any) => (
             <div
               key={menu._id}

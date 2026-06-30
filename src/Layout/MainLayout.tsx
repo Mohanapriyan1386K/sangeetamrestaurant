@@ -5,7 +5,7 @@ import Footer from "./Footer";
 function MainLayout() {
   return (
     <div className="min-h-screen">
-      <div className="fixed top-3 left-0 w-full z-50">
+      <div className="fixed top-0 md:top-3 left-0 w-full z-50">
         <Navbar />
       </div>
 
