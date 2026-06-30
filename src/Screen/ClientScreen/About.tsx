@@ -64,7 +64,7 @@ export default function About() {
             <img
               //   src="https://res.cloudinary.com/dmmxb21nu/image/upload/v1782632554/sweet%20Image/glm9kjchv3dbi0qvz5ts.jpg"
               src={
-                "https://res.cloudinary.com/dmmxb21nu/image/upload/v1782746307/sweet%20Image/dxz2pfir8bycvey976ah.png"
+                "https://res.cloudinary.com/dmmxb21nu/image/upload/v1782752029/menu/koieoehwpzwvurm9fskj.webp"
               }
               alt="Restaurant"
               className="rounded-3xl shadow-2xl object-cover w-full h-[600px]"
