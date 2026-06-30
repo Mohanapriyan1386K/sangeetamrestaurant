@@ -5,6 +5,7 @@ import {
   FiHome,
   FiMessageSquare,
 } from "react-icons/fi";
+import { RiMenuUnfold4Line } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
 
 export default function Sidebar() {
@@ -15,6 +16,11 @@ export default function Sidebar() {
       name: "Dashboard",
       path: "/admin",
       icon: <FiHome />,
+    },
+    {
+      name:"Menumeangement",
+      path:"menumeangement",
+      icon:<RiMenuUnfold4Line/>
     },
     {
       name: "Feedback",

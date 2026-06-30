@@ -106,7 +106,7 @@ function Imageadd() {
 
         <br />
 
-        <button type="submit">Add Product</button>
+        <button className="bg-amber-300"  type="submit">Add Product</button>
       </form>
 
       <div>

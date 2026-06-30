@@ -1,12 +1,15 @@
 import { BsStars, BsStarFill, BsChevronRight } from "react-icons/bs";
 
 
+
 function Home() {
   return (
     <main>
       <section className="relative h-[100vh] min-h-[700px]">
         <img
           src="https://res.cloudinary.com/dmmxb21nu/image/upload/v1782632554/sweet%20Image/glm9kjchv3dbi0qvz5ts.jpg"
+          // src={"https://res.cloudinary.com/dmmxb21nu/image/upload/v1782746307/sweet%20Image/dxz2pfir8bycvey976ah.png"}
+          // src={"/Sangree.png"}
           alt="Hotel"
           className="absolute inset-0 w-full h-full object-cover"
         />
