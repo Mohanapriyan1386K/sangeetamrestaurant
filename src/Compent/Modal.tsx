@@ -1,4 +1,4 @@
-const Modal = ({ open, onClose, title, children, mode,data }:any) => {
+const Modal = ({ open, onClose, title, children, mode}:any) => {
   if (!open) return null;
 
   const htitle=mode=="update"?"update":"Add"

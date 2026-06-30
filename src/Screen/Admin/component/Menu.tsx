@@ -6,7 +6,8 @@ import * as Yup from "yup";
 const Menu = ({ data, mode }: any) => {
   console.log(data);
   console.log(mode);
-  const [preview, setPreview] = useState(null);
+ 
+  const [preview, setPreview] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
