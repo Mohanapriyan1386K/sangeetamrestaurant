@@ -18,7 +18,7 @@ const MenuList = () => {
   const getMenus = async () => {
     try {
       
-      const res = await axios.get(`${BASE_URL} /api/menu`);
+      const res = await axios.get(`${BASE_URL}/api/menu`);
       // const res = await axios.get("http://localhost:5000/api/menu");
       setMenus(res.data.data);
     } catch (err) {
