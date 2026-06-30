@@ -6,7 +6,7 @@ import * as Yup from "yup";
 const Menu = ({ data, mode }: any) => {
   console.log(data);
   console.log(mode);
- 
+
   const [preview, setPreview] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -50,7 +50,9 @@ const Menu = ({ data, mode }: any) => {
         formData.append("description", values.description);
         formData.append("category", values.category);
         formData.append("price", values.price);
-        formData.append("image", values?.image);
+        if (values.image) {
+          formData.append("image", values.image);
+        }
 
         const res =
           mode === "update"
