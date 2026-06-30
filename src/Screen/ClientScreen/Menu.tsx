@@ -4,7 +4,7 @@ import { BASE_URL } from "../../Const";
 
 const categories = [
   { label: "South Indian", value: "south_indian" },
-  { label: "Breakfast", value: "breakfast" },
+  // { label: "Breakfast", value: "breakfast" },
   { label: "Starters", value: "starters" },
   // { label: "Soups", value: "soups" },
   // { label: "North Indian", value: "north_indian" },
